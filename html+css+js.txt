@@ -1,0 +1,290 @@
+HTML
+	웹을 이루는 가장 기초적인 구성요소
+	웹 페이지의 내용을 서술하고 정의하는데 사용
+	- 태그라는 문법적 특성으로 웹 화면의 요소를 표현
+	문법
+		마크업 언어
+			태그의 집합으로 하나의 큰 정보를 표현
+		여는 태그와 닫는 태그의 한쌍
+		태그는 중첩될 수 있다.
+		<태그네임>컨텐츠</태그네임>
+		여는태그		닫는태그
+	기본 구조
+		html, head, body 태그
+		html 태그는 문서의 시작과 끝
+		head 태그는 문서의 메타 정보를 정의하는데
+		body 태그 안에는 실제 사용자에게 보여질 화면을 구현
+글의 내용을 정의하는 태그
+	Heading 태그
+		제목을 구성하는 태그
+		<h1> ~ <h6>
+	Paragraph 태그
+		하나의 문단을 지정할 때 사용되는 태그
+		<p>
+	Break 태그
+		줄바꿈을 해도 웹페이지 상에서 줄바꿈이 되지 않습니다.
+		br태그는 닫는 태그 없이 사용이 가능하다.
+		이것을 홀태그라 한다.
+		<br/>
+	Horizontal rule 태그
+		문서 내에 가로 선을 넣고 싶을 때 사용한다.
+		홀태그 형태로 하나의 태그만 사용
+		<hr>
+	Strong, bold 태그
+		강조할때 사용
+		<b> </b>
+		<strong> </storng>
+리스트를 나열하는 태그들
+	Ordered list : ol
+		순서가 있는 항목들을 나열할 때 사용합니다.
+		<ol>
+			<li> </i>
+		 	<li></li>
+		</ol>
+	Unordered list : ul
+		순서가 정해지지 않는 태그
+		<ul>
+			<li>
+			<li>
+		</ul>
+	List item : li
+HTML 요소의 두 형태
+	화면 영역을 차지하는 형태에 따라 Block과 inLine으로 형태로 나뉘
+	Block
+		태그의 내용과 관계없이 상위 요소의 너비에 맞개 너비를 차지함,
+		레이아웃 영역을 지정할 때 주로 사용됨
+	Inline
+		태그의 내용에 맞춰서 너비가 결정됨
+		레이아웃에 영향을 주지 않고 일부 내용에만
+		스타일이나 내요의 구분을 주고 싶을 때 사용
+	태그(tag)? 요소(Element)?
+		태그
+			HTML의 문법적 규칙이자 코드를 의미
+		요소
+			실제 웹페이지 화면에 그려지는 구성 요소들을 으미함
+		보통은 하나의 HTML 태그가 웹피이지의 요소에 일대일로 연결됨
+	Block 요소
+		화면의 레이아웃, 얼개를 짜거나 구성을 나눌때주로사용
+		이 요소에 CSS 스타일을 적용하여 화면의 레이아웃을 오나성함
+		div
+			block요소의 대표적인 태그로 아무 의미를 담지 않는 
+			블록 요소로 아래의 블록요소들의 상위 개념
+		section
+			서로 다른 내용 구성이 들어갈 영역에 구분하는 블록 요소
+		article
+			동일한 내용 구성이 반복될 때 구분하기 위한 블록 
+		header
+			본문 내용의 머리말 영역
+		footer
+			본문 내용의 바닥글의 영역
+	Inline 요소
+		화면의 레이아웃에 영향을 미치지 않고
+		특정 내용을 강조하거나 구분하고 싶을 때 사용
+		우리가 앞에서 배운 b, i등의 요소가 이에 속하며
+		span이 대표적
+		span
+			아무 의미도 내포하지 않은 대표적인 inline요소
+			CSS 스타일과 함께 특정 내용을 강조하거나 구분하고 싶을 때 사용
+	블록/인라인 요소의 사용
+		section, header 등의 레이아웃 구성을 위하 태귿르은 전부
+		div로 대체해서 사용은 가능하지만 스크린리더 등의 Accessibility를
+		고려해서 가능하면 의미를 내포하고 있는 태그를 사용ㅇ을 권장
+		
+		css의 스타일 중 display 속성을 이용하면 div 등의
+		기존 block 요소를 위한 태그도 inline 요소로 바꿔서  보여지게 할 수 있고
+		span등의 inline요소도 block 요소로 표현하는 것도 가능함.
+		하지만 가능하면 기본 형태에 맞게 사용을 권장
+하이퍼 미디어
+	웹페이지의 내의 미디어를 통해 다른 연관 정보로 넘어갈 수 있게 하는 연결골
+	링크를 의미한다.
+	a(anchor) 태그
+		특정 내용에 링크를 생성할 때 사용 
+		href(hyper reference) 속성으로 이동할 리소스를 지정한다.
+		이동할 리소스는 URL과 같은 웹페이지 주소나 미디어의 주소가 ㄱ됩니다.
+		<a href = "이동할 url">페이지 이동 </ㅁ>
+	img(image)태그
+		이미지를 삽입할 대 사용
+		src(source) 속성으로 이미지의 주소를 지정하여 해당 이미지가 ㅍ시
+		홀태그 형식으로 사용된다.
+		<img src = "표시될 이미지 주소"/>
+	embed 태그
+		외부 컨텐츠를 삽입할 때 사용
+		유튜브, 플래시, 영상같은 외부 미디어 객체를 웹사이트에
+		포함시키고 싶을 때 사용
+		<embed src = "객체의 주소"/>
+		비슷한거 object
+	img, a 혼합
+	<a href ="주소">
+		<img src = "이미지주소"/>
+	</a>
+표 작성하기
+	표를 그리기 위해서는 여러 태그를 조합해서 코드를 작성
+	table : 표의 시작과 끝
+	tr : 표의 하나의 행
+	th, td : 표의 열
+	<table>
+		<tr>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>	
+		</tr>
+	</table>
+	열합치기
+		rowspan : 합칠 행의 수
+		<table>
+			<tr>
+				<td rowspan = "2">
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>	
+			</tr>
+		</table>
+	행합치기 : colspan
+		<table>
+			<tr>
+				<td colspan = "2"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>	
+			</tr>
+		</table>
+폼(Form)
+	사용자에게 데이터를 입력 받기 위한 구성을 폼이라고 합ㄴ디ㅏ.
+	<form></form> 사이에 폼 관련 태그들(input, label, button, select 등)
+	을 넣어 하나의 폼을 구성한다.
+	form
+		폼의 시작과 끝을 정의하는 태그
+		태그 내에 input, select button 태그 사용가능
+		주요 속성
+			action
+				데이터를 전송할 url 주소
+			method
+				데이터를 전송할 방법
+				get 또는 post
+			enctype
+				데이터를 전송할 때 전송 인코딩 형식을 지정
+				이미지, binary 또는 text
+	input
+		사용자 입력을 받는 입력상자나 버튼을 만드는 xorm
+		type의 속성에 따라 입력칸, 선택박스(라디오 버튼, 체크박스), 버튼을 표시하 수 있다.
+		홀 태그 형식으로 사용한다.
+		radio
+			레디오 태그
+		checkbox
+			체크박스 태그
+		속성
+			type
+				입력 형태를 지정합니다.
+				text, password, button, submit, radio, checkbox 등이 있다.
+				<input type ="button" value = "완료"/>
+				submit
+					바로 데이터 전송
+					submit 시 name과 value 값이 붙어서 간다.
+				button
+					자바스크립트 연동으로 사용
+					input 태그 대신 button으로 사용 가능
+				text
+					문자열을 입력할 수 있는 입력 칸을 표시
+				password
+					입력 내용 마스킹 되어 화면에 노출 x
+				radio
+					선택지 하나 당 하나의 태그를 사용해서 만든다.
+					단수만
+				checkbox
+					복수 가능	
+			name
+				입력 값의 이름을 지정합니다.
+				서버가 보기위한 이름표
+				전송되는 data 수식 => 사용자 안보임
+				만약 name = id
+				-> id = abc로 서버로 간다.
+			value
+				입력 상자의 값을 지정할 수 있다.(content 느낌)
+				
+	select		
+		드롭다운 선택박스를 만든다.
+		option 태그를 사용해서 선택지를 추가한다.
+		<select name = "job" id = "job">
+			<option value = "programing">프로그래밍</option>
+			<option value = "design">디자인</option>
+		</select>
+	label
+		입력상자 마다 제목을 붙이는 ㅐ그
+	button
+		버튼을 만드는 태그
+	texarea 태그
+		두 줄 이상의 긴 글을 입력 받도록 해주는 입력 칸을 만든다.
+		쌍 태그로 만들어지고 태그 사이에 값을 미리 넣을 수 있다.
+		내부의 contents는 줄바꿈을 인식한다.
+		안에 있는 내용이 value가 되어 날라간다.
+	label 태그
+		사용자에게 각 입력 칸을 설명해주는 레이블을 표시할 수 있다.
+		입력 태그에 id 속성으로 지정된 값을 for 속성으로 넣어주면 그 입력
+		태그를 수식해주게 된다.(종속된다.)
+		하나의 inputbox만 인식
+		id 주민등록
+		<label for = "username">이름</label>
+		<input type = "text" id = "username"/>
+	fieldset, legend 태그
+		여러 입력 태그를 하나의 그룹으로 묶꼬 원하는 제목을 달 수 있다.
+		<fieldset>
+			<legend> 가장 좋아하는 과일은? </legend>
+			<label></label>
+			<input> ~~~</input>
+		</fieldset>
+메타 태그
+	메타태그는 웹문서의 정보(메타데이터)를 알려주기 위해 작성하는 태그(웹 사이틀르 설명하는 제목, 키워드, 이미지)
+	사용자에겐 보이지 않지만 웹브라우저, 검색엔진, 그리고 메타데이터를 활용한 웹 서비스들이 사용하게 된다.
+	<head>태그 내에 위치하고 홀 태그 형식으로 사용한다.
+	속성
+		charset
+			웹문서의 문자 인코딩을 알려주는 역할
+			문자열이 어떤 문자코드 기반으로 해석되고 표현할지를 정한다.
+			현재의 웹에서는 유니코드 기반인 UTF-8인코딩을 사용하기 때문에
+			charset = "utf-8"으로 작성한다.
+		viewport
+			<meta name = "viewport" content = "width=device=width,
+				inital=scale=1.0">
+			웹 문서가 그려지는 영역(viewport)에 대해 크기나 확대비율을 어떻게
+			조정할지를 정한다.
+			content 속성에 viewport 설정 값을 넣을 수 있다.
+			width
+				너비를 결정, 모바일 기기 너비에 맞춘다면 device-width
+			initial-scale
+				처음에 화면에 보여질 때의 배율 1.0 기본 크기 2.0이면 2배크기
+		author, description, keyword
+			검색 엔진이나 외부 웹 서비스에 알려질 정보들을 표현합니다.
+			<meta name = "author" content="인프런">
+			<meta name = "keywords" content = "HTML", "abc" >
+			<meta name = "description" content = "웹 개발 오리지널">
+		open grapth
+			위 메타 태그로도 정보를 나타 낼수 있지만
+			open graph 메타 태그를 사용하면 facebook과 같은 sns에 더
+			자세한 정보를 알려줄 수 있다.
+			<meta property = "og:title" content = "인프런"/>
+			<meta property = "og:type" content = "article"/>
+			<meta property = "og:url" content = "http://www.~~"/>
+			<meta property = "og:image" content = "경로"/>(썸네일)
+iframe 태그
+	다른 웹 페이지를 표시할 수 있는 태그
+	<ifram width = "500" height = "300" src = http://www.inflearn.com"
+		frameborder="0">
+	</iframe>
+	속성
+		src : iframe에 표시될 웹 문서 주소
+		width, height : 높이, 너비 (px 기준, %도 가능)
+		frameborder : 테두리 표시 여부 (1,0)
+		scrolling : 스크롤바 표시 여부(yes, no, auto)
+		name : a 태그에서 참조할 이름
+		
+
+
+	
+	
