@@ -1,0 +1,259 @@
+CSS
+	Cascading Style sheets
+	HTML 웹 문서의 스타일을 표현하는 언어로 HTML 코드로 작성된 웹 요소들이 어떻게 표시되어야할지를 정의합니다.
+	선택자(Selector){
+		css속성 : css속성 값;
+	}
+	body{
+		font-size : 9pt;
+	}
+CSS 구조
+	화면 상의 HTML로 이루어진 요소들에 대응하여 스타일 세트를 각각 적용한다.
+	<html>
+		<body>	body{font-size:9pt;}
+			<h1></h1>	h1{font-weight:bold; color:green;}
+			<p>
+			</p>
+		</body>
+	</html>
+CSS를 선언하는 법
+	CSS를 HTML에 적용하는 3가지 방법
+	1. 인라인 스타일
+	2. 내부 스타일 시트
+	3. 외부 스타일 시트
+	
+	1.inline 선언
+		각 html 태그에 직접 style 속성을 이용해서 선언한다.
+		<p style = "font-size: 11pt"> </p>
+		<p style = "font-size: 11pt; color: white;"> </p>
+		각 태그에 적용해야해서 많이 사용하지 않는다.
+	2. 내부 스타일 선언
+		같은 html파일 내에 style태그를 사용해서 태그 내부에 선언한다.
+		보통 head 태그 내에 style태그를 작성한다.
+		선택자라는 문법을 사용해서 문서 내의 요소(HTML 태그로 생성된 화면 요소)를 선택해서
+		스타일을 지정한다.
+		<head>
+			<style>
+				p{
+					font-size:11pt;
+				}
+			</style>
+		</head>
+		<body>
+			<p>
+			</p>
+		</body>
+		html 파일이 여러 개 있을 대 각 html 파일에 각각 코드를 작성해야한다.
+	3. 외부 스타일 선언
+		내부 스타일 선언에 선언된 스타일 세트들을 외부파일(.css)에 선언하고 link 태그로
+		적용하려는 html에 불러오는 방법이다.
+		<head>
+			<link rel="stylesheet" type = "text/css" href="main.css"/>
+		</head>
+주석 쓰기
+	css 코드에서는 다음과 같이 주석을 작성한다.
+	 /* 주석 쓰기 */
+
+글자와 관련된 스타일
+	color, font-family, font-size, font-weight, line-height
+	1. color
+		글자 색 (빛의 3원색 기준, 16진수 코드, rgb(x,x,x), rgba(x,x,x,x)형태_
+	2. font-family
+		글씨체 (글씨체에 띄어쓰기가 있을 경우 쌍따움표를 사용)
+	3. font-size
+		글씨 크기(pt, px, em 등의 단위를 사용)
+	4. font-weight
+		글자 꿁기 (100~900 사이의 값이나 bold로 굵은 굵기 표현 가능)
+	5. line-height
+		줄 간격(높이)(%단위나 px 등의 단위를 사용)
+색 표현하기
+	hexcode
+		빛의 3원색 값을 16진수로 2자리씩 표현해서 6자리의 코드를 만든다.
+	rgb(0,0,0) ~ rgb(255,255,255)
+폰트
+	폰트(글씨체)는 폰트명을 직접 작성함으로써 지정한다.
+	하나의 글시체 이름이 여러 단어로 이루어져 있다면 쌍따움표로 묶어주고 아니면 그냥 기ㅜㅅㄹ한다.
+	가장 먼저 서술된 폰트가 없다면 그 뒤의 폰트가 적용되도록 설정된다. 내가 지정한 폰트가
+	다 없을 경우 알아서 선택되도록 serif, sans-serif, cursive, monospace 중
+	특성을 가진 폰트를 알아서 선택하도록 할 수 있다.
+	font family : "Timees New Roman", Times, serif;
+	font family : 돋움, 굴림, 고딕, 궁서
+	한글 폰트는 제약이 많다.
+크기의 단위
+	글씨나, 컨테이너의 크기를 결정할 때 기본 단위는 px, pt, em, % 등이 있다.
+	px : 화면의 pixel 개수의 단위, 해상도에 따라 화면에 보이는 실제 크기가 다르다.
+	pt : 포인트 단위로 1포인트는 1/72 인치 기준으로 인쇄시에도 비슷한 크기로 인쇄된다.
+	em : 상대크기, (부모 요소에서) 기존에 사용된 크기에 비해 얼마의 비율이 크기로 결정할지 
+		(1.0em = 100%)
+	% : 상대 크기, 부모요소의 컨테이너 크기에 비해 얼마큼의 크기를 차지할지
+문장, 문단과 관련된 스타일
+	text-align, text-indent, text-decoration
+	1. text-align
+		정렬방식, left, right, center, justify(균등) 중 선택
+	2. text-indent:
+		첫 글자 들여쓰기 수준, px 등을 이용해서 들여쓰기 적용
+	3. text-decoration
+		글자 장식, underline(밑줄), overline(윗줄), line-throuhtt(취소선) 적용
+크기 속성
+	widht 너비 값
+	height 높이 값
+	부모요소 500px
+		자식요소 50% -> 250px
+CSS 셀렉터
+	내부/외부 스타일 시트에서 문서의 html 요소를 선택할 수 있게 하는 문법
+	tag 선택자
+		html 문서의 특정 태그를 선택할 때 사용
+		h1, th, body
+		어떠한 기호로 붙이지 않고 태그 이름을 바로 사용한다.
+		모든 문서 내 태그에 적용된다.
+		<p> ... </p> -> p{ ... css 속성 선언 ... }
+	id 선택자
+		html 문서의 하나의 요소를 특정해서 선택할 때 사용
+		하나의 id는 문서 내 하나만 존재해야 한다.
+		html 태그의 id를 지정/선언할 수 있다.
+		# 기호로 표현한다.
+		<p id = "description-text-1"> </p>
+		->
+		#description-text-1{
+			...css 속성 선언 ...
+		}
+	class 선택자
+		html 문서의 여러 요소를 선택할 때 사용
+		html 태그의 속성으로 class를 지정할 수 있다.
+		하나의 class는 문서 내 여러 개에 지정할 수 있다.
+		. 기호로 표현한다.
+		<p class = "description-text"> </p>
+		<p class = "description-text"> </p>
+		<p class = "description-text"> </p>
+		->
+		.description-text{
+			...css 속성 선언...
+		}
+	조합 선택자
+		특정 요소 하위에 있는 요소를 선택한다.
+		자식 조합 선택자 : > 기호 사용
+		자손 조합 선택자 : 띄어쓰기 사용
+		ex)
+			<div>
+				<h1>
+					<span>
+						뱃지
+					<span>
+					<p>
+					</p>
+				</h1>
+			</div>
+			h1 > span{
+				...
+			}
+			h1 p {
+				...
+			}
+	상태 선택자
+		:(콜론) 기호를 사용한다. 요소가 특정 상태가 되었을 때 선택 된다.
+		반응 선택자 : hover(마우스 커서가 위에), active(활성화된), visited(방문한 링크) 등
+			a:hover{
+				color: blue;
+			}
+		상태 선택자 : focus(입력, 버튼에 포커스), enabled(사용가능한), disable(사용불가능한) 등
+	특성 선택자
+		요소에 부여된 특성의 존재 여부나 그 값에 따라 선택, 대괄호를 사용해서 특성을 지정함
+		a[href] : href 속성이 지정된 요소
+		a[href = http://www.naver.com]
+			href가 네이버만 선택
+		input[type="text"]{
+			...
+		}
+여백 관련 속성
+	Margin
+		외부
+	Padding
+		내부
+	padding 혹은 margin : 40 px; -> 상하좌우 여백 균등
+	padding 혹은 margin : 20px 40px; -> 상하 20px, 좌우 40px
+	padding 혹은 margin : 15px 5px 15px 5px -> 상, 우, 하, 좌 여백(시계방향)
+	margin: {특정숫자} auto -> 상하 특정숫자, 좌우 여백은 중앙에 맞게 알아서 적용
+	
+	width + Padding : 블록 요소가 실제 사람 눈에 표현되는 너비
+	Hegiht + Padding : 블록 요소가 실제 사람 눈에 표현되는 높이
+	
+	box-sizing : border-box;
+배경 속성, background
+	background-color : 배경색
+	background-image : 배경 이미지
+	background-repeat : 배경 이미지 반복 여부
+	background-position : 배경 이미지 위치
+요소들의 위치 규칙, display, float, position
+	display
+		해당 요소가 어떻게 보여질지, (block, inline-block	, inline 등)
+		none
+			화면에 보이지 않게 한다.
+		block	
+			블록 요소 형태로 표현한다. 내용과 관계없이 너비를 전부 차지한다.
+		inline
+			인라인 요소 형태로 표현한다. 내용에 따라 너비가 결정된다.
+		inline-block
+			블록 요소로 표현하되 양 옆에 다른 요소가 위치할 수 있다.
+		flex
+			flex 레이아웃을 사용할 수 있게 한다.
+			비율대로 박스로 나누어서 조정
+		grid
+			gird 레이아웃을 사용할 수 있게 한다.
+			바둑판 형식
+	float
+		화면 내용들을 무시하고 좌측이나 우측으로 위치 조정(left, right)
+		left
+			왼쪽으로 우선 정렬
+		right
+			오른쪽으로 우선 정렬
+	position
+		위치 값을 직접 정할 수 있는 규칙 적용(absolute, relative, fixed)
+		absolute
+			절댓값, 그곳에 위치
+			문서 내 절대 좌표로 요소를 위치시킨다. (left: 10px, top: 0px;)
+		relative
+			현재위치에서, 상대적인 위치로
+			바로 앞의 요소에 대해 얼마나 떨어져 위치 할지를 지정합니다.
+		fixed
+			윈도우즈 기반의 절댓값
+			화면 스크롤과 관계없이 위치 시킨다.
+		
+테두리 속성, border
+	특정 요소에 테두리를 지정할 수 있다.
+	border-width
+		굵기
+	border-style : 선 종류
+		solidd 실선
+		dotted 점선
+		dashed 대시선
+		double 이중선
+	border-color
+		선색
+	border
+		위의 3 속성 한번에 사용 가능
+		border: 1px solid #000000;
+				굵기, 종류, 색
+테두리 그림자 속성, shadow
+	box-shadow 테두리 외부에 그림자 효과를 준다.
+		box-shadow : 5px 10px 8px, 10px, #000000;
+			오른쪽 5px, 아래로 10px, 흐려짐 강도 8, 퍼지는 정도 10px, 색 검정색
+
+테두리 둥글게, border-radius
+	테두리를 둥글게
+	border-radius : 25px
+		모두 25px만큼 둥글게
+	border-radius: 20px, 5px
+		좌측상단, 우측하단은 20px, 우측상다, 좌측하단은 5px
+	
+
+
+
+
+
+
+
+
+
+	
+	
+	
