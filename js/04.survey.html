@@ -1,0 +1,41 @@
+<script>
+    var list = [
+        {
+            question: "이 중에서 제일 좋아하는 과일은?",
+            options: [
+                "사과", "복숭아", "포도", "바나나", "딸기"
+            ]
+        },
+        {
+            question: "이 중에서 제일 좋아하는 음식은?",
+            options: [
+                "치킨", "떡볶이", "찌개", "파스타", "빵"
+            ]
+        },
+        {
+            question: "이 중에서 제일 좋아하는 동물은?",
+            options: [
+                "다람쥐", "새", "여우", "고양이", "개"
+            ]
+        },
+    ]
+    console.log(list);
+    for(var i = 0; i<list.length; i++){
+        var questionMes = list[i].question + '\n';
+
+        for(var j = 0; j<list[i].options.length; j++){
+            questionMes += (j+1) + '.' + list[i].options[j] + ' ';
+        }
+        console.log(questionMes);
+        list[i].options.answer = prompt(questionMes);
+    }
+
+
+    for(var i = 0; i<list.length; i++){
+        var index = parseInt(list[i].answer);
+        var message = list[i].question + '\n당신의 선택: '+ list[i].options.answer;
+
+        alert(message);
+    }
+
+</script>
